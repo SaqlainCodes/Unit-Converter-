@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Unit Coverter</title>
+  </head>
+  <body>
+    <h1>Unit converter</h1>
+    <div id="container">
+      <div class="input-div">
+        <label>Feet</label>
+        <br />
+        <input type="number" value="1" id="feet" class="input" />
+      </div>
+      <!----End input Div-->
+
+      <div class="input-div">
+        <h1>=</h1>
+      </div>
+      <!----End input Div-->
+      <div class="input-div">
+        <label>Inches</label>
+        <br />
+        <input type="number" value="12" id="inch" class="input" />
+      </div>
+    </div>
+    <!----end container---->
+
+    <script>
+      var feet = document.getElementById('feet')
+
+      var inch = document.getElementById('inch')
+
+      feet.addEventListener('input', function () {
+        let f = this.value
+        let i = f * 12
+        inch.value = i
+      })
+
+      inch.addEventListener('input', function () {
+        let i = this.value
+        let f = i / 12
+        if (!Number.isInteger(f)) {
+          f = f.toFixed(2)
+        }
+        feet.value = f
+      })
+    </script>
+  </body>
+</html>
